@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevExtremeMvcBootstrap", "D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevExtremeMvcMaterial", "DevExtremeMvcMaterial\DevExtremeMvcMaterial.csproj", "{3A134509-F98C-4846-993E-27B2B8F0430D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevExtremeDemo1", "DevExtremeDemo1\DevExtremeDemo1.csproj", "{52D0B793-8D74-4579-9D4C-5A358C11EDCB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +28,10 @@ Global
 		{3A134509-F98C-4846-993E-27B2B8F0430D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A134509-F98C-4846-993E-27B2B8F0430D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A134509-F98C-4846-993E-27B2B8F0430D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52D0B793-8D74-4579-9D4C-5A358C11EDCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52D0B793-8D74-4579-9D4C-5A358C11EDCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52D0B793-8D74-4579-9D4C-5A358C11EDCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52D0B793-8D74-4579-9D4C-5A358C11EDCB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

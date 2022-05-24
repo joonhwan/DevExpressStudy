@@ -12,7 +12,7 @@
         columns.AddFor(m => m.ShipCountry);
         columns.AddFor(m => m.ShipCity);
     })
-    .Paging(p => p.PageSize(10))
+    .Paging(p => p.PageSize(50))
     .FilterRow(f => f.Visible(true))
     .HeaderFilter(f => f.Visible(true))
     .GroupPanel(p => p.Visible(true))

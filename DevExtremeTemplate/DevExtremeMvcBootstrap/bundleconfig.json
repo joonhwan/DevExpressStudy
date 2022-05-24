@@ -20,7 +20,8 @@
         ],
         "minify": {
             "enabled": false
-        }
+        },
+        "sourceMap":true
     },
     {
         "outputFileName": "wwwroot/js/vendor.js",
@@ -60,6 +61,7 @@
         ],
         "minify": {
             "enabled": false
-        }
+        },
+        "sourceMap": true
     }
 ]

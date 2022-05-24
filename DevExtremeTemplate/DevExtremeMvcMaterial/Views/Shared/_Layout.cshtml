@@ -70,7 +70,7 @@
 
             @functions{
                 string GetUrl(string action) => Url.Action(action);
-                string GetCurrentUrl() => Url.Action(ViewContext.RouteData.Values["action"].ToString());
+                string GetCurrentUrl() => Url.Action(ViewContext.RouteData.Values["action"]?.ToString());
                 bool IsCurrentUrl(string pageName) => GetUrl(pageName) == GetCurrentUrl();
             }
 
@@ -102,11 +102,11 @@
 
     <script>
 
-        var DevExtremeMvcMaterial = (function() {
+        const DevExtremeMvcMaterial = (function() {
 
-            var DRAWER_OPENED_KEY = "DevExtremeMvcMaterial-drawer-opened";
+            const DRAWER_OPENED_KEY = "DevExtremeMvcMaterial-drawer-opened";
 
-            var breakpoints = {
+            const breakpoints = {
                 xSmallMedia: window.matchMedia("(max-width: 599.99px)"),
                 smallMedia: window.matchMedia("(min-width: 600px) and (max-width: 959.99px)"),
                 mediumMedia: window.matchMedia("(min-width: 960px) and (max-width: 1279.99px)"),
@@ -118,11 +118,11 @@
             }
 
             function restoreDrawerOpened() {
-                var isLarge = breakpoints.largeMedia.matches;
+                const isLarge = breakpoints.largeMedia.matches;
                 if(!isLarge)
                     return false;
 
-                var state = sessionStorage.getItem(DRAWER_OPENED_KEY);
+                const state = sessionStorage.getItem(DRAWER_OPENED_KEY);
                 if(state === null)
                     return isLarge;
 
@@ -134,7 +134,7 @@
             }
 
             function updateDrawer() {
-                var isXSmall = breakpoints.xSmallMedia.matches,
+                const isXSmall = breakpoints.xSmallMedia.matches,
                     isLarge = breakpoints.largeMedia.matches;
 
                 getDrawer().option({
@@ -171,15 +171,15 @@
             }
 
             function onTreeViewItemClick(e) {
-                var drawer = getDrawer();
-                var savedOpened = restoreDrawerOpened();
-                var actualOpened = drawer.option("opened");
+                const drawer = getDrawer();
+                const savedOpened = restoreDrawerOpened();
+                const actualOpened = drawer.option("opened");
 
                 if(!actualOpened) {
                     drawer.show();
                 } else {
-                    var willHide = !savedOpened || !breakpoints.largeMedia.matches;
-                    var willNavigate = !e.itemData.selected;
+                    const willHide = !savedOpened || !breakpoints.largeMedia.matches;
+                    const willNavigate = !e.itemData.selected;
 
                     if(willHide)
                         drawer.hide();
