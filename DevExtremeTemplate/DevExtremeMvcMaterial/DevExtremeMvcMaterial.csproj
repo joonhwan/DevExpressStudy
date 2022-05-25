@@ -6,8 +6,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-    <PackageReference Include="DevExtreme.AspNet.Data" Version="2.8.6" />
     <PackageReference Include="DevExtreme.AspNet.Core" Version="21.2.7" />
+    <PackageReference Include="DevExtreme.AspNet.Data" Version="2.8.6" />
     <PackageReference Include="BuildBundlerMinifier" Version="2.9.406" />
     </ItemGroup>
 
