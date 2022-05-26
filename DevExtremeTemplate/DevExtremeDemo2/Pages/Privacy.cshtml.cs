@@ -14,5 +14,11 @@ public class PrivacyModel : PageModel
 
     public void OnGet()
     {
+        _logger.LogInformation("은밀한 페이지 접근 : {UserName}", User.Identity?.Name);
+        UserName = User.Identity?.Name ?? String.Empty;
+
     }
+
+    [BindProperty]
+    public string UserName { get; set; } = string.Empty;
 }

@@ -1,0 +1,65 @@
+@page
+@using DevExtremeDemo2.Controllers
+@model DevExtremeDemo2.Areas.Demo.Pages.Form.Demo1
+
+<div class="row">
+    <p class="h3">Demo/Form/Overview</p>
+    @{
+        var routes = Model.RouteData.Values;
+        <p class="mb-0">Area : @routes["area"]</p>
+        <p class="mb-0">Page : @routes["page"]</p>
+    }
+    @* @string.Join(", ", Model.RouteData.Values) *@
+</div>
+
+<div id="form-demo" class="row">
+
+</div>
+
+<script>
+    function getFormInstance() {
+        return $("#form").dxForm("instance");
+    }
+
+    function selectBox_valueChanged(data) {
+        getFormInstance().option("formData", data.value);
+    }
+
+    function labelMode_changed(data) {
+        getFormInstance().option("labelMode", data.value);
+
+        const $companySelectText = $("#companySelectText");
+        const companySelectBox = $("#companySelectBox").dxSelectBox("instance");
+        if(data.value === "outside") {
+            companySelectBox.option("labelMode", "hidden");
+            $companySelectText.show();
+        } else {
+            companySelectBox.option("labelMode", data.value);
+            $companySelectText.hide();
+        }
+    }
+
+    function labelLocation_changed(data) {
+        getFormInstance().option("labelLocation", data.value);
+    }
+
+    function colCount_changed(data) {
+        getFormInstance().option("colCount", data.value);
+    }
+
+    function minColWidth_changed(data) {
+        getFormInstance().option("minColWidth", data.value);
+    }
+
+    function formWidth_changed(data) {
+        getFormInstance().option("width", data.value);
+    }
+
+    function readOnly_changed(data) {
+        getFormInstance().option("readOnly", data.value);
+    }
+
+    function showColonAfterLabel_changed(data) {
+        getFormInstance().option("showColonAfterLabel", data.value);
+    }
+</script>

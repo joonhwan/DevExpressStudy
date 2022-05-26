@@ -71,9 +71,19 @@
       "destination": "wwwroot/lib/bootstrap/"
     },
     {
+      "library": "node_modules/bootstrap/dist/css/bootstrap.css.map",
+      "provider": "filesystem",
+      "destination": "wwwroot/css"
+    },
+    {
       "library": "node_modules/bootstrap/dist/js/bootstrap.js",
       "provider": "filesystem",
       "destination": "wwwroot/lib/bootstrap/"
+    },
+    {
+      "library": "node_modules/bootstrap/dist/js/bootstrap.js.map",
+      "provider": "filesystem",
+      "destination": "wwwroot/js"
     }
   ]
 }
