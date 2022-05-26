@@ -8,11 +8,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DevExtreme NuGet.config", "
 		NuGet.config = NuGet.config
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevExtremeMvcBootstrap", "DevExtremeMvcBootstrap\DevExtremeMvcBootstrap.csproj", "{462C0FD2-6FB6-458F-B0CB-8F460B21AE43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevExtremeMvcBootstrap", "DevExtremeMvcBootstrap\DevExtremeMvcBootstrap.csproj", "{462C0FD2-6FB6-458F-B0CB-8F460B21AE43}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevExtremeMvcMaterial", "DevExtremeMvcMaterial\DevExtremeMvcMaterial.csproj", "{3A134509-F98C-4846-993E-27B2B8F0430D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevExtremeMvcMaterial", "DevExtremeMvcMaterial\DevExtremeMvcMaterial.csproj", "{3A134509-F98C-4846-993E-27B2B8F0430D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevExtremeDemo1", "DevExtremeDemo1\DevExtremeDemo1.csproj", "{52D0B793-8D74-4579-9D4C-5A358C11EDCB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevExtremeDemo1", "DevExtremeDemo1\DevExtremeDemo1.csproj", "{52D0B793-8D74-4579-9D4C-5A358C11EDCB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevExtremeBootstrapRazor", "DevExtremeBootstrapRazor\DevExtremeBootstrapRazor.csproj", "{37971953-0E6B-417D-9E80-6413147671C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,6 +34,10 @@ Global
 		{52D0B793-8D74-4579-9D4C-5A358C11EDCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52D0B793-8D74-4579-9D4C-5A358C11EDCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52D0B793-8D74-4579-9D4C-5A358C11EDCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37971953-0E6B-417D-9E80-6413147671C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37971953-0E6B-417D-9E80-6413147671C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37971953-0E6B-417D-9E80-6413147671C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37971953-0E6B-417D-9E80-6413147671C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
