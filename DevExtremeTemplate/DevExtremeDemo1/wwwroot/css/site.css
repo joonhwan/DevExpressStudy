@@ -14,5 +14,26 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+  margin-bottom: 60px
+}
+
+#companySelectBox {
+  margin-bottom: 1rem;
+}
+
+#form {
+  padding: 1rem;
+  border: 2px solid #ffcdcd;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+
+.photo-popup-content {
+  text-align: center;
+}
+
+.photo-popup-content .photo-popup-image {
+  height: 100%;
+  max-width: 100%;
 }
