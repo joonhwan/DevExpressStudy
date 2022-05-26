@@ -1,0 +1,65 @@
+[
+    {
+        "outputFileName": "wwwroot/css/vendor.css",
+        "inputFiles": [
+            // Adding the UTF-8 charset to display icons correctly
+            "wwwroot/css/Charset.css",
+
+            // Uncomment to use the Gantt control
+            //"lib/devextreme/css/dx-gantt.css",
+
+            // Uncomment to use the Diagram control
+            //"lib/devextreme/css/dx-diagram.css",
+
+            "wwwroot/lib/bootstrap/bootstrap.css",
+
+//            "wwwroot/lib/devextreme/css/dx.common.css",
+
+            // Predefined themes: https://js.devexpress.com/DevExtreme/Guide/Themes_and_Styles/Predefined_Themes/
+            "wwwroot/lib/devextreme/css/dx.light.css"
+        ],
+        "minify": {
+            "enabled": false
+        }
+    },
+    {
+        "outputFileName": "wwwroot/js/vendor.js",
+        "inputFiles": [
+            // Uncomment to use the Gantt control
+            //"lib/devextreme/js/dx-gantt.js",
+
+            // Uncomment to use the Diagram control
+            //"lib/devextreme/js/dx-diagram.js",
+
+            "wwwroot/lib/jquery/jquery.js",
+            "wwwroot/lib/bootstrap/bootstrap.js",
+
+            // Uncomment to use Globalize for localization
+            // Docs: https://docs.devexpress.com/AspNetCore/400577#globalize
+            //"lib/devextreme/js/cldr.js",
+            //"lib/devextreme/js/cldr/event.js",
+            //"lib/devextreme/js/cldr/supplemental.js",
+            //"lib/devextreme/js/cldr/unresolved.js",
+            //"lib/devextreme/js/globalize.js",
+            //"lib/devextreme/js/globalize/message.js",
+            //"lib/devextreme/js/globalize/number.js",
+            //"lib/devextreme/js/globalize/currency.js",
+            //"lib/devextreme/js/globalize/date.js",
+
+            // Uncomment to enable client-side export
+            //"lib/devextreme/js/jszip.js",
+
+            "wwwroot/lib/devextreme/js/dx.all.js",
+
+            // Uncomment to provide geo-data for the VectorMap control
+            // Docs: https://js.devexpress.com/DevExtreme/Guide/Widgets/VectorMap/Providing_Data/#Data_for_Areas
+            //"lib/devextreme/js/vectormap-data/world.js",
+
+            "wwwroot/lib/devextreme/js/dx.aspnet.mvc.js",
+            "wwwroot/lib/devextreme/js/dx.aspnet.data.js"
+        ],
+        "minify": {
+            "enabled": false
+        }
+    }
+]
