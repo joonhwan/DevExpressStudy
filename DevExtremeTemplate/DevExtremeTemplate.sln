@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevExtremeBootstrapRazor", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevExtremeDemo2", "DevExtremeDemo2\DevExtremeDemo2.csproj", "{0FFF4126-8206-4BA7-9A91-C7DD343D132B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevExtremeWebPackDemo1", "DevExtremeWebPackDemo1\DevExtremeWebPackDemo1.csproj", "{A28F7353-631B-474D-8F78-EF36AFD3D22E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +46,10 @@ Global
 		{0FFF4126-8206-4BA7-9A91-C7DD343D132B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FFF4126-8206-4BA7-9A91-C7DD343D132B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FFF4126-8206-4BA7-9A91-C7DD343D132B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A28F7353-631B-474D-8F78-EF36AFD3D22E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A28F7353-631B-474D-8F78-EF36AFD3D22E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A28F7353-631B-474D-8F78-EF36AFD3D22E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A28F7353-631B-474D-8F78-EF36AFD3D22E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

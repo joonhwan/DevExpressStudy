@@ -1,0 +1,20 @@
+@page "{id}"
+@using DevExtreme.AspNet.Mvc
+@using DevExtremeDemo2.Controllers
+@model DevExtremeDemo2.Areas.Demo.Pages.Form.Companies.Edit
+
+<h2>Company 편집하기(Id = @Model.Id)</h2>
+
+@using (Html.BeginForm())
+{
+    Html.DevExtreme()
+        .Form<ActiveCompany>()
+        .FormData(Model.ActiveCompany)
+        .Render();
+
+    Html.DevExtreme()
+        .Button()
+        .Text("저장")
+        .UseSubmitBehavior(true)
+        .Render();
+}

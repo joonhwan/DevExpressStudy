@@ -1,0 +1,41 @@
+@page
+@using DevExtreme.AspNet.Mvc
+@using DevExtremeDemo2.Controllers
+@model DevExtremeDemo2.Areas.Demo.Pages.Form.Companies.Index
+
+<h2>Company 정보</h2>
+
+<div class="row">
+    @(Html.DevExtreme()
+        .DataGrid<ActiveCompany>()
+        .ID("active-companies-grid")
+        .DataSource(Model.ActiveCompanies)
+        // .Editing(e =>
+        // {
+        //     e.Mode(GridEditMode.Popup);
+        //     e.AllowAdding(true);
+        //     e.AllowDeleting(true);
+        //     e.AllowUpdating(true);
+        // })
+        .Columns(c =>
+        {
+            c.AddFor(x => x.Name);
+            c.AddFor(x => x.Address);
+            c.AddFor(x => x.City);
+            c.AddFor(x => x.State);
+            c.AddFor(x => x.ID)
+                .Caption("편집")
+                .Alignment(HorizontalAlignment.Left)
+                .CellTemplate(@<text>
+                                  <div>
+                                      <a href="./companies/edit/<%- value %>">
+                                          @(Html.DevExtreme()
+                                              .Button()
+                                              .Icon("edit"))
+                                      </a>
+                                  </div>
+                               </text>)
+                .DataField("ID")
+                ;
+        }))
+</div>

@@ -1,8 +1,10 @@
 @page
+@using DevExtreme.AspNet.Mvc
 @using DevExtremeDemo2.Controllers
+@using DevExtremeDemo2.Common.Extensions
 @model DevExtremeDemo2.Areas.Demo.Pages.Form.Demo1
 
-<div class="row">
+<div class="row mb-4">
     <p class="h3">Demo/Form/Overview</p>
     @{
         var routes = Model.RouteData.Values;
@@ -12,8 +14,94 @@
     @* @string.Join(", ", Model.RouteData.Values) *@
 </div>
 
-<div id="form-demo" class="row">
-
+<div id="form-demo" class="row gx-5">
+    <div class="widget-container col-md-8 py-4 bg-info">
+        <div id="companySelectText" class="mb-1">Select company:</div>
+        <div class="mb-4">
+        @(Html.DevExtreme()
+            .SelectBox()
+            .ID("companySelectBox")
+            .DisplayExpr("Name")
+            .Label("Select company")
+            .LabelMode(EditorLabelMode.Floating)
+            .DataSource(d => d
+                .Mvc()
+                .Controller<CompanyController>()
+                .LoadAction(nameof(CompanyController.GetCompanies))
+                .Key("ID")
+            )
+            .Value(1)
+            .OnValueChanged("selectBox_valueChanged")
+            )
+        </div>
+        @(Html.DevExtreme().Form()
+            .ID("form")
+            .ColCount(2)
+            .FormData(Model.FirstActiveCompany)
+            .LabelMode(FormLabelMode.Outside)
+            .LabelLocation(FormLabelLocation.Top)
+            .MinColWidth(300)
+            .ReadOnly(false)
+            .ShowColonAfterLabel(true)
+            )
+    </div>
+    <div class="options col-md-4 bg-warning rounded-3 py-4">
+        <div class="caption">Options</div>
+        <div class="option">
+            <span>Label mode:</span>
+            @(Html.DevExtreme().SelectBox()
+                .DataSource(new[] { "outside", "static", "floating", "hidden" })
+                .Value("outside")
+                .OnValueChanged("labelMode_changed")
+                )
+        </div>
+        <div class="option">
+            <span>Label location:</span>
+            @(Html.DevExtreme().SelectBox()
+                .DataSource(new[] { "left", "top" })
+                .Value("left")
+                .OnValueChanged("labelLocation_changed")
+                )
+        </div>
+        <div class="option">
+            <span>Columns count:</span>
+            @(Html.DevExtreme().SelectBox()
+                .DataSource(new object[] { "auto", 1, 2, 3 })
+                .Value(2)
+                .OnValueChanged("colCount_changed")
+                )
+        </div>
+        <div class="option">
+            <span>Min column width:</span>
+            @(Html.DevExtreme().SelectBox()
+                .DataSource(new[] { 150, 200, 300 })
+                .Value(300)
+                .OnValueChanged("minColWidth_changed")
+                )
+        </div>
+        <div class="option">
+            <span>Form width:</span>
+            @(Html.DevExtreme().NumberBox()
+                .Value(null)
+                .Max(550)
+                .OnValueChanged("formWidth_changed")
+                )
+        </div>
+        <div class="option">
+            @(Html.DevExtreme().CheckBox()
+                .Text("readOnly")
+                .Value(false)
+                .OnValueChanged("readOnly_changed")
+                )
+        </div>
+        <div class="option">
+            @(Html.DevExtreme().CheckBox()
+                .Text("showColonAfterLabel")
+                .Value(true)
+                .OnValueChanged("showColonAfterLabel_changed")
+                )
+        </div>
+    </div>
 </div>
 
 <script>

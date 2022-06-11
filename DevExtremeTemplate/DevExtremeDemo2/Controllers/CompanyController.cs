@@ -25,12 +25,17 @@ public class ActiveCompany {
     public int ZipCode { get; set; }
     public string Phone { get; set; }
     public string Fax { get; set; }
-    public string Website { get; set; }
+    public string? Website { get; set; }
     public bool Active { get; set; }
+
+    public override string ToString()
+    {
+        return $"{nameof(ID)}: {ID}, {nameof(Name)}: {Name}";
+    }
 }
 
 public class SampleData {
-    public static readonly IEnumerable<ActiveCompany> ActiveCompanies = new[] {
+    public static readonly List<ActiveCompany> ActiveCompanies = new() {
         new ActiveCompany() {
             ID = 1,
             Name = "Super Mart of the West",
