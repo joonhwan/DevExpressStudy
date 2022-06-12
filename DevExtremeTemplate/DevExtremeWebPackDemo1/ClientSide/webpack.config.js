@@ -1,34 +1,44 @@
 // Generated using webpack-cli https://github.com/webpack/webpack-cli
 
-const path = require("path");
-const webpack = require("webpack");
+const path = require('path');
+// const webpack = require("webpack");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const isProduction = process.env.NODE_ENV == "production";
-const stylesHandler = "style-loader";
+const isProduction = process.env.NODE_ENV === 'production';
+// const stylesHandler = "style-loader";
+const stylesHandler = { loader: MiniCssExtractPlugin.loader };
 
 const config = {
   entry: {
-    site: "./src/js/site.js",
+    site: './src/js/site.js',
+    bootstrap_js: './src/js/bootstrap_js.js',
+    validation: './src/js/validation.js',
+    index: './src/js/pages/index.js',
+    rating: './src/js/pages/rating.js',
   },
   output: {
-    filename: "[name].entry.js",
-    path: path.resolve(__dirname, "..", "wwwroot", "dist"),
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, '..', 'wwwroot', 'dist'),
   },
-  devtool: "source-map",
-  plugins: [],
+  devtool: 'source-map',
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+    }),
+  ],
   module: {
     rules: [
       {
         test: /\.css$/i,
-        use: [stylesHandler, "css-loader"],
+        use: [stylesHandler, 'css-loader'],
       },
       {
         test: /\.s[ac]ss$/i,
-        use: [stylesHandler, "css-loader", "sass-loader"],
+        use: [stylesHandler, 'css-loader', 'sass-loader'],
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
-        type: "asset",
+        type: 'asset',
       },
       // Add your rules for custom modules here
       // Learn more about loaders from https://webpack.js.org/loaders/
@@ -38,9 +48,9 @@ const config = {
 
 module.exports = () => {
   if (isProduction) {
-    config.mode = "production";
+    config.mode = 'production';
   } else {
-    config.mode = "development";
+    config.mode = 'development';
   }
   return config;
 };

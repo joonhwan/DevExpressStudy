@@ -1,0 +1,16 @@
+@page
+@model DevExtremeWebPackDemo1.Pages.RatingModel
+@section Scripts
+{
+    <link rel='stylesheet' href='~/dist/rating.css'>
+    <script src="~/dist/rating.bundle.js" defer></script>
+}
+<h2>별점 매기기</h2>
+
+<form method="post">
+    <div class='mb-3'>
+        <select id="rating" asp-for="Input.SelectedValue" asp-items="@Model.Input.Ratings">
+        </select>
+    </div>
+    <button class="btn btn-primary" type="submit">저장</button>
+</form>

@@ -1,0 +1,1 @@
+console.log('index.js 가 로딩되었어요')

@@ -1,0 +1,23 @@
+@page
+@model DevExtremeWebPackDemo1.Pages.ContactModel
+@section Scripts
+{
+    <script src="~/dist/validation.bundle.js" defer></script>
+}
+<h2>Contact</h2>
+
+<form method="post">
+    <div class="mb-3">
+        <label asp-for="Input.Subject" class="form-label"></label>
+        <input asp-for="Input.Subject" class="form-control"/>
+        <span asp-validation-for="Input.Subject" class="small text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Input.Message" class="form-label"></label>
+        <textarea asp-for="Input.Message" class="form-control"></textarea>
+        <span asp-validation-for="Input.Message" class="small text-danger"></span>
+    </div>
+
+    <button class="btn btn-primary" type="submit">Submit</button>
+</form>
