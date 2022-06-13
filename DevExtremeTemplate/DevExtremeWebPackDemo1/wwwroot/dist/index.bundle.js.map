@@ -1,1 +1,0 @@
-{"version":3,"file":"index.bundle.js","mappings":";;;;;AAAA,gC","sources":["webpack://devextremewebpackdemo1/./src/js/pages/index.js"],"sourcesContent":["console.log('index.js 가 로딩되었어요')"],"names":[],"sourceRoot":""}
