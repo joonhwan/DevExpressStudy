@@ -1,0 +1,60 @@
+@page
+@using DevExtreme.AspNet.Mvc
+@using DevExtreme.AspNet.Mvc.Builders
+@using DevExtreme.AspNet.Mvc.Factories
+@using DevExtremeWebPackDemo1.Model
+@using Microsoft.AspNetCore.Mvc.Razor
+@model DevExtremeWebPackDemo1.Pages.DevFormModel
+
+<h2>DevForm</h2>
+
+
+@using (Html.BeginForm())
+{
+    @* <div class="mb-2"> *@
+    @*     @(Html.DevExtreme() *@
+    @*         .Button() *@
+    @*         .Text("저장") *@
+    @*         .UseSubmitBehavior(true)) *@
+    @* </div> *@
+    <div class="dx-demo">
+        @(Html.DevExtreme()
+            .Form<GenerationOption>()
+            .ColCount(2)
+            .FormData(Model.SampleOption)
+            .Items(factory =>
+            {
+                factory.AddSimpleFor(x => x.Name);
+                factory.AddSimpleFor(x => x.Type)
+                    .Editor(e => e.SelectBox()
+                        .DataSource(Enum.GetNames(typeof(GenerationType)))
+                        .Value(Enum.GetName(typeof(GenerationType), Model.SampleOption.Type)));
+                factory.AddSimpleFor(x => x.DefectCount);
+                factory.AddSimpleFor(x => x.MinTime);
+                factory.AddSimpleFor(x => x.MaxTime);
+                factory.AddSimpleFor(x => x.MaskRatio);
+            })
+            )
+        @Html.DevExtreme().Button().Text("저장하기").UseSubmitBehavior(true)
+    </div>
+    @* *@
+    @* <div class="mt-4"> *@
+    @*     @using (Html.BeginForm()) *@
+    @*     { *@
+    @*         <div class="dx-form-group"> *@
+    @*             @Html.LabelFor(m => m.SampleOption.Type) *@
+    @*             @(Html.DevExtreme() *@
+    @*                 .SelectBoxFor(m => m.SampleOption.Type) *@
+    @*                 .DataSource(Html.GetEnumSelectList<GenerationType>() *@
+    @*                     .Select(x => new *@
+    @*                     { *@
+    @*                         Value = int.Parse(x.Value), *@
+    @*                         Text = x.Text, *@
+    @*                     })) *@
+    @*                 .ValueExpr("Value") *@
+    @*                 .DisplayExpr("Text") *@
+    @*                 ) *@
+    @*         </div> *@
+    @*     } *@
+    @* </div> *@
+}

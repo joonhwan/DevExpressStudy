@@ -66,3 +66,9 @@ button.accept-policy {
   white-space: nowrap;
   line-height: 60px;
 }
+
+.dx-demo {
+  border: 1px solid var(--bs-gray-400);
+  border-radius: 5px;
+  padding: 16px;
+}
