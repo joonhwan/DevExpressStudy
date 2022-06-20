@@ -24,9 +24,9 @@
     <div class='mb-3'>
         <label asp-for="Input.Tags" class="form-label">Tags</label>
         <select asp-for="Input.Tags" class="form-control">
-            <option value="0">하나</option>
-            <option value="1">둘</option>
-            <option value="3">셋</option>
+            @* <option value="0">하나</option> *@
+            @* <option value="1">둘</option> *@
+            @* <option value="3">셋</option> *@
         </select>
     </div>
 
@@ -39,6 +39,10 @@
         .select2({
             placeholder: 'Tags를 선택하세요',
             allowClear: true,
+            //theme: 'bootstrap-5',
+            //containerCssClass: 'select2--small', // For Select2 v4.0
+            // selectionCssClass: 'select2--small', // For Select2 v4.1
+            // dropdownCssClass: 'select2--small',
             ajax: {
                 url: '/api/v1/tags',
                 data: function(params) {

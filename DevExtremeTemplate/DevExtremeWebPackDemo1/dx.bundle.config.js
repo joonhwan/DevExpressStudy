@@ -185,4 +185,4 @@ viz.dxSankey = require("devextreme/viz/sankey");
 
 /* Utilities for integration with ASP.NET */
 DevExpress.aspnet = require("devextreme/aspnet");
-require("devextreme-aspnet-data");
+DevExpress.data.AspNet = require("devextreme-aspnet-data");

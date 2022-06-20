@@ -33,7 +33,7 @@ public class ContactModel : PageModel
         
         if (ModelState.IsValid)
         {
-            _logger.LogInformation("모델 정상 임. 리디렉션됨");
+            _logger.LogInformation("모델 정상 임. 리디렉션됨. 모델 = {Model}", Input.ToString());
             return RedirectToPage("Privacy");
         }
 
@@ -50,7 +50,12 @@ public class ContactModel : PageModel
         // [Required(ErrorMessage = "Please enter a message.")]
         public string Message { get; set; }
         
-        public List<string> Tags { get; set; } 
+        public List<string> Tags { get; set; }
+
+        public override string ToString()
+        {
+            return $"{nameof(Subject)}: {Subject}, {nameof(Message)}: {Message}, {nameof(Tags)}: {string.Join(", ", Tags)}";
+        }
     }
 
     public class InputValidator : AbstractValidator<InputModel>
