@@ -1,9 +1,11 @@
 @page
 @model DevExtremeWebPackDemo1.Pages.ContactModel
+
 @section Scripts
 {
     <script src="~/dist/validation.bundle.js" defer></script>
 }
+
 <h2>Contact</h2>
 
 <form method="post">
@@ -19,5 +21,40 @@
         <span asp-validation-for="Input.Message" class="small text-danger"></span>
     </div>
 
+    <div class='mb-3'>
+        <label asp-for="Input.Tags" class="form-label">Tags</label>
+        <select asp-for="Input.Tags" class="form-control">
+            <option value="0">하나</option>
+            <option value="1">둘</option>
+            <option value="3">셋</option>
+        </select>
+    </div>
+
     <button class="btn btn-primary" type="submit">Submit</button>
 </form>
+
+
+<script>
+    $("#@($"{nameof(Model.Input)}_{nameof(Model.Input.Tags)}")")
+        .select2({
+            placeholder: 'Tags를 선택하세요',
+            allowClear: true,
+            ajax: {
+                url: '/api/v1/tags',
+                data: function(params) {
+                    console.log('params : ', params);
+                    return {
+                        search: params.term
+                    };
+                },
+                processResults: function(results) {
+                    console.log(results);
+                    return {
+                        results
+                    };
+                }
+            }
+        })
+        //.removeAttr("style")
+        ;
+</script>

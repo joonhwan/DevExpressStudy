@@ -24,7 +24,8 @@
     "jquery-bar-rating": "^1.2.2",
     "jquery-validation": "^1.19.4",
     "jquery-validation-unobtrusive": "^3.2.12",
-    "jszip": "^3.10.0"
+    "jszip": "^3.10.0",
+    "select2": "^4.0.13"
   },
   "devDependencies": {
     "css-loader": "^6.7.1",

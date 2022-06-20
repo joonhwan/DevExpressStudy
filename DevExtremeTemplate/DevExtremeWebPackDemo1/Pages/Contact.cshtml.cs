@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -42,11 +43,22 @@ public class ContactModel : PageModel
     
     public class InputModel
     {
-        [Required]
-        [StringLength(30, MinimumLength = 3)]
+        // [Required]
+        // [StringLength(30, MinimumLength = 3)]
         public string Subject { get; set; }
 
-        [Required(ErrorMessage = "Please enter a message.")]
+        // [Required(ErrorMessage = "Please enter a message.")]
         public string Message { get; set; }
+        
+        public List<string> Tags { get; set; } 
+    }
+
+    public class InputValidator : AbstractValidator<InputModel>
+    {
+        public InputValidator()
+        {
+            RuleFor(x => x.Subject).NotNull().Length(3, 30);
+            RuleFor(x => x.Message).NotNull().MinimumLength(5).WithMessage("메시지를 꼭 넣어야 한다니까요!");
+        }
     }
 }

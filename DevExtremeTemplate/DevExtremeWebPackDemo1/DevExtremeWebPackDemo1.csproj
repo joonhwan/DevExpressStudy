@@ -43,5 +43,6 @@
         <PackageReference Include="DevExtreme.AspNet.Core" Version="21.2.8" />
         <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.5" />
         <PackageReference Include="AngleSharp" Version="0.17.0" />
+        <PackageReference Include="FluentValidation.AspNetCore" Version="11.0.3" />
     </ItemGroup>
 </Project>

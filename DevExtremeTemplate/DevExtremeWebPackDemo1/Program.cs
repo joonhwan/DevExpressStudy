@@ -1,3 +1,6 @@
+using DevExtremeWebPackDemo1.Model;
+using FluentValidation.AspNetCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +9,10 @@ builder.Services
     .AddJsonOptions(options =>
     {
         options.JsonSerializerOptions.PropertyNamingPolicy = null;
+    })
+    .AddFluentValidation(options =>
+    {
+        options.RegisterValidatorsFromAssemblyContaining<GenerationOptionValidator>();
     })
     ;
 
@@ -27,39 +34,39 @@ string PrettifyHtml(string content)
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.Use(async (context, next) =>
-    {
-        if (context.Request.Method == "GET")
-        {
-            var body = context.Response.Body;
-
-            using var updatedBody = new MemoryStream();
-            context.Response.Body = updatedBody;
-
-            await next();
-
-            updatedBody.Seek(0, SeekOrigin.Begin);
-            if (context.Response.ContentType.StartsWith("text/html"))
-            {
-                context.Response.Body = body;
-
-                var newContent = new StreamReader(updatedBody).ReadToEnd();
-
-                var prettifiedHtml = PrettifyHtml(newContent);
-                await context.Response.WriteAsync(prettifiedHtml);
-            }
-            else
-            {
-                await updatedBody.CopyToAsync(body);
-                context.Response.Body = body;
-                // context.Response.ContentLength = updatedBody.Length;
-            }
-        }
-        else
-        {
-            await next();
-        }
-    });
+    // app.Use(async (context, next) =>
+    // {
+    //     if (context.Request.Method == "GET")
+    //     {
+    //         var body = context.Response.Body;
+    //
+    //         using var updatedBody = new MemoryStream();
+    //         context.Response.Body = updatedBody;
+    //
+    //         await next();
+    //
+    //         updatedBody.Seek(0, SeekOrigin.Begin);
+    //         if (context.Response.ContentType.StartsWith("text/html"))
+    //         {
+    //             context.Response.Body = body;
+    //
+    //             var newContent = new StreamReader(updatedBody).ReadToEnd();
+    //
+    //             var prettifiedHtml = PrettifyHtml(newContent);
+    //             await context.Response.WriteAsync(prettifiedHtml);
+    //         }
+    //         else
+    //         {
+    //             await updatedBody.CopyToAsync(body);
+    //             context.Response.Body = body;
+    //             // context.Response.ContentLength = updatedBody.Length;
+    //         }
+    //     }
+    //     else
+    //     {
+    //         await next();
+    //     }
+    // });
 }
 else
 {

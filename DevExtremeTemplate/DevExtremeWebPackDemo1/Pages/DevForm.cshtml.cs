@@ -32,6 +32,10 @@ public class DevFormModel : PageModel
 
     public IActionResult OnPost()
     {
+        if (!ModelState.IsValid)
+        {
+            return Page();
+        }
         _logger.LogInformation("Sample Option : {SampleOption}", SampleOption.ToString());
         return RedirectToPage("Index");
     }
