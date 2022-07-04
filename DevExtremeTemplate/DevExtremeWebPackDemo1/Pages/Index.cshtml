@@ -8,7 +8,28 @@
     <script src="~/dist/index.bundle.js" defer></script>
 }
 
-<div class="text-center">
+<div>
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <markdown normalize-whitespace="true">
+        # 이것은 타이틀 입니다.
+        
+        Markdown 을 HTML로 바꾸는 [패키지](https://github.com/RickStrahl/Westwind.AspNetCore.Markdown)를 통해 생성된 HTML 입니다 
+        
+
+        - [X] 해야 할 목록 1
+        - [ ] 해야 할 목록 2
+
+        ## 서브 제목 1
+
+        ```cs
+        app.UseDefaultFiles(new DefaultFilesOptions()
+        {
+        DefaultFileNames = new List
+        <string> { "index.md", "index.html" }
+        });
+
+        app.UseMarkdown();
+        ```
+    </markdown>
+
 </div>

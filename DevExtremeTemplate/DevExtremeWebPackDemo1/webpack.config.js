@@ -14,6 +14,7 @@ const config = {
     validation: "./Clients/validation.js",
     index: "./Clients/pages/index.js",
     rating: "./Clients/pages/rating.js",
+    reactPage: "./Clients/pages/react-page/main.js",
   },
   output: {
     filename: "[name].bundle.js",
@@ -25,8 +26,21 @@ const config = {
       filename: "[name].css",
     }),
   ],
+  resolve: {
+    extensions: ["", ".js", ".jsx"],
+  },
   module: {
     rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env", "@babel/preset-react"],
+          },
+        },
+      },
       {
         test: /\.css$/i,
         use: [stylesHandler, "css-loader"],
