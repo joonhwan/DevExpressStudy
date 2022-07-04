@@ -73,3 +73,6 @@ button.accept-policy {
   padding: 16px;
 }
 
+.form-label {
+  margin-bottom: 2px;
+}

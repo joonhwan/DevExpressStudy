@@ -30,19 +30,38 @@
         </select>
     </div>
 
+    <div class='mb-3'>
+        <label for='month' class="form-label">Month</label>
+        <select name='month' id='month' class="form-control" multiple>
+            <option value='Jan'>January</option>
+            <option value='Feb'>Feburary</option>
+            <option value='Mar'>March</option>
+            <option value='Apr'>April</option>
+            <option value='May'>May</option>
+            <option value='Jun'>June</option>
+            <option value='Jul'>July</option>
+            <option value='Aug'>August</option>
+            <option value='Sep'>September</option>
+            <option value='Oct'>October</option>
+            <option value='Nov'>November</option>
+            <option value='Dec'>December</option>
+
+        </select>
+    </div>
+
     <button class="btn btn-primary" type="submit">Submit</button>
 </form>
 
 
 <script>
+$(function() {
     $("#@($"{nameof(Model.Input)}_{nameof(Model.Input.Tags)}")")
         .select2({
             placeholder: 'Tags를 선택하세요',
             allowClear: true,
-            //theme: 'bootstrap-5',
-            //containerCssClass: 'select2--small', // For Select2 v4.0
-            // selectionCssClass: 'select2--small', // For Select2 v4.1
-            // dropdownCssClass: 'select2--small',
+            theme: 'bootstrap-5',
+            selectionCssClass: "select2--small",
+            dropdownCssClass: "select2--small",
             ajax: {
                 url: '/api/v1/tags',
                 data: function(params) {
@@ -61,4 +80,12 @@
         })
         //.removeAttr("style")
         ;
+    $("#month").select2({
+        placeholder: 'Month를 선택하세요',
+        theme: "bootstrap-5",
+        allowClear: true,
+        selectionCssClass: "select2--small",
+        dropdownCssClass: "select2--small"
+    });
+});
 </script>
