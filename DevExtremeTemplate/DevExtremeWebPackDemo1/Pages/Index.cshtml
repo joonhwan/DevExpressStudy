@@ -24,8 +24,9 @@
         ```cs
         app.UseDefaultFiles(new DefaultFilesOptions()
         {
-        DefaultFileNames = new List
-        <string> { "index.md", "index.html" }
+            DefaultFileNames = new List<string> { 
+                "index.md", "index.html" 
+            }
         });
 
         app.UseMarkdown();

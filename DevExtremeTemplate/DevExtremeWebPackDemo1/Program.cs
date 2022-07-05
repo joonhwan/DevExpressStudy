@@ -3,6 +3,7 @@ using FluentValidation.AspNetCore;
 using Markdig;
 using Markdig.Extensions.AutoIdentifiers;
 using Westwind.AspNetCore.Markdown;
+using Markdig.SyntaxHighlighting;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -42,7 +43,7 @@ builder.Services
         config.ConfigureMarkdigPipeline = builder =>
         {
             builder
-                .UseEmphasisExtras(Markdig.Extensions.EmphasisExtras.EmphasisExtraOptions.Default)
+                .UseEmphasisExtras()
                 .UsePipeTables()
                 .UseGridTables()
                 .UseAutoIdentifiers(AutoIdentifierOptions.GitHub) // Headers get id="name" 
@@ -55,7 +56,10 @@ builder.Services
                 .UseTaskLists()
                 .UseCustomContainers()
                 //.DisableHtml()   // renders HTML tags as text including script
-                .UseGenericAttributes();
+                .UseGenericAttributes()
+                .UseBootstrap()
+                .UseAdvancedExtensions()
+                .UseSyntaxHighlighting();
         };
     })
     .AddMvc()

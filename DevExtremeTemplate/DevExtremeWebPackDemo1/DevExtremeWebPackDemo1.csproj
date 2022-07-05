@@ -46,5 +46,7 @@
         <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.5" />
         <PackageReference Include="AngleSharp" Version="0.17.0" />
         <PackageReference Include="FluentValidation.AspNetCore" Version="11.0.3" />
+        <PackageReference Include="Markdig.SyntaxHighlighting" Version="1.1.7" />
+        <PackageReference Include="ColorCode.Portable" Version="1.0.3" /> 
     </ItemGroup>
 </Project>
