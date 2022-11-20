@@ -1,0 +1,95 @@
+.dx-datagrid-table {
+  background-color: var(--dq-bg-view-grid-row);
+  color: var(--dq-fg-view-grid-row);
+}
+
+.dx-scrollable-content {
+  background-color: var(--dq-bg-view-grid-free-row);
+}
+
+.dx-row.dx-column-lines.dx-header-row {
+  color: var(--dq-fg-view-grid-header);
+  background-color: var(--dq-bg-view-grid-header);
+}
+.dx-datagrid-headers .dx-datagrid-table .dx-row > td {
+  border-color: var(--dq-bd-view-grid-header);
+}
+
+.dx-datagrid-rowsview .dx-row {
+  border-color: var(--dq-bd-view-grid-row);
+}
+
+.dx-datagrid .dx-column-lines > td {
+  border-color: var(--dq-bd-view-grid-row);
+}
+
+.dx-datagrid-rowsview
+  .dx-selection.dx-row:not(.dx-row-focused).dx-column-lines
+  > td,
+.dx-datagrid-rowsview
+  .dx-selection.dx-row:not(.dx-row-focused).dx-column-lines
+  > tr
+  > td,
+.dx-datagrid-rowsview
+  .dx-selection.dx-row:not(.dx-row-focused):hover.dx-column-lines
+  > td,
+.dx-datagrid-rowsview
+  .dx-selection.dx-row:not(.dx-row-focused):hover.dx-column-lines
+  > tr
+  > td {
+  border-left-color: var(--dq-bd-view-grid-row);
+  border-right-color: var(--dq-bd-view-grid-row);
+}
+
+.dx-datagrid-rowsview
+  .dx-selection.dx-row:not(.dx-row-focused):hover:not(.dx-row-lines)
+  > td,
+.dx-datagrid-rowsview
+  .dx-selection.dx-row:not(.dx-row-focused):not(.dx-row-lines)
+  > td {
+  border-top-color: var(--dq-bd-view-grid-row);
+  border-bottom-color: var(--dq-bd-view-grid-row);
+}
+
+.dx-row.dx-data-row.dx-column-lines.dx-state-hover > td {
+  background: var(--dq-bg-view-grid-row-hover) !important;
+  border-color: var(--dq-bd-view-grid-row);
+}
+
+.dx-datagrid-rowsview .dx-selection > td {
+  background: var(--dq-bg-view-grid-row-active) !important;
+  color: var(--dq-fg-view-grid-row-active) !important;
+}
+
+// Keyboard 로 focus 했을 때 스타일
+.dx-datagrid-rowsview
+  .dx-row-focused.dx-data-row
+  .dx-command-edit:not(.dx-focused)
+  .dx-link,
+.dx-datagrid-rowsview .dx-row-focused.dx-data-row > td:not(.dx-focused),
+.dx-datagrid-rowsview .dx-row-focused.dx-data-row > tr > td:not(.dx-focused) {
+  background: var(--dq-bg-view-grid-row-active) !important;
+  color: var(--dq-fg-view-grid-row-active) !important;
+}
+
+.dx-row.dx-freespace-row {
+  background-color: var(--dq-bg-view-grid-free-row);
+  color: var(--dq-fg-view-grid-free-row);
+  // 스타일이 좀.... 완벽히 세로 경계선이 없어지지 않는다.
+  border-color: var(--dq-bg-view-grid-free-row);
+}
+
+.dx-datagrid .dx-row.dx-freespace-row.dx-column-lines > td {
+  border-left: none;
+  border-right: none;
+}
+
+// .dx-row.dx-data-row.dx-column-lines > td {
+//   border-left: 1px solid red;
+//   border-right: 1px solid red;
+// }
+
+.dx-datagrid-pager {
+  display: none;
+  height: 0;
+}

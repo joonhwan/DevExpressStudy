@@ -1,0 +1,146 @@
+@using DevExtreme.AspNet.Mvc
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MiChef.Mvc</title>
+    <link rel="stylesheet" href="~/webpack/index.bundle.css" />
+    <script src="~/webpack/index.bundle.js"></script>
+    <script src="~/webpack/dx.bundle.js"></script>
+    <environment include="Development">
+        <!--suppress JSUnresolvedFunction -->
+        <script type="module">
+            import RefreshRuntime from '@Html.Raw("http://localhost:3000/@react-refresh")';
+            RefreshRuntime.injectIntoGlobalHook(window);
+            window.$RefreshReg$ = () => { };
+            window.$RefreshSig$ = () => (type) => type;
+            window.__vite_plugin_react_preamble_installed__ = true;
+        </script>
+        <script type="module" src="@Html.Raw("http://localhost:3000/@vite/client")"></script>
+        @* css와 js를 oldschool 방식으로 열어야 하는 부분은 여기에. *@
+        <link rel="stylesheet" href="http://localhost:3000/site.scss" />
+        <script type="module" src="http://localhost:3000/site.js"></script>
+    </environment>
+</head>
+
+<body clsas="dx-viewport-no">
+    <div class="layout">
+        <nav class="navbar flex-none border-r-2 border-black">
+            <div>
+                <img src="~/assets/images/rc-logo.png" alt="rc logo">
+            </div>
+            <div class="dq_menu">
+                <div class="dq_menu_group">
+                    <div class="dq_menu_header">
+                        <i class="bi bi-diagram-2"></i>
+                        <span>개발</span>
+                        <i class="bi bi-chevron-down"></i>
+                    </div>
+                    <ul>
+                        <li class="dq_menu_item">
+                            <a asp-page="/Index">
+                                <span>레시피 개발</span>
+                            </a>
+                        </li>
+                        <li class="dq_menu_item">
+                            <a asp-page="/ImageAnalysis">
+                                <span>이미지 분석</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="dq_menu_group">
+                    <div class="dq_menu_header">
+                        <i class="bi bi-diagram-2"></i>
+                        <span>워크플로우</span>
+                        <i class="bi bi-chevron-down"></i>
+                    </div>
+                    <ul>
+                        <li class="dq_menu_item">
+                            <a asp-page="/WorkflowManager">
+                                <span>워크플로우 관리</span>
+                            </a>
+                        </li>
+                        <li class="dq_menu_item">
+                            <a asp-page="/RazorWeather">
+                                <span>워크플로우 모니터링</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="dq_menu_group">
+                    <div class="dq_menu_header">
+                        <i class="bi bi-diagram-2"></i>
+                        <span>머신러닝</span>
+                        <i class="bi bi-chevron-down"></i>
+                    </div>
+                    <ul>
+                        <li class="dq_menu_item">
+                            <a asp-page="/Index">
+                                <span>데이터셋 관리</span>
+                            </a>
+                        </li>
+                        <li class="dq_menu_item">
+                            <a asp-page="/RazorWeather">
+                                <span>클래스 코드</span>
+                            </a>
+                        </li>
+                        <li class="dq_menu_item">
+                            <a asp-page="/RazorWeather">
+                                <span>모델 관리</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="dq_menu_group">
+                    <div class="dq_menu_header">
+                        <i class="bi bi-diagram-2"></i>
+                        <span>GDS</span>
+                        <i class="bi bi-chevron-down"></i>
+                    </div>
+                    <ul>
+                        <li class="dq_menu_item">
+                            <a asp-page="/Index">
+                                <span>GDS 관리</span>
+                            </a>
+                        </li>
+                        <li class="dq_menu_item">
+                            <a asp-page="/RazorWeather">
+                                <span>Floor Plan 관리</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="dq_menu_group">
+                    <div class="dq_menu_header">
+                        <i class="bi bi-diagram-2"></i>
+                        <span>운영</span>
+                        <i class="bi bi-chevron-down"></i>
+                    </div>
+                    <ul>
+                        <li class="dq_menu_item">
+                            <a asp-page="/Index">
+                                <span>Defect 관리</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="content grow ">
+            <main role="main">
+                @RenderBody()
+            </main>
+        </div>
+    </div>
+    @* <script src="~/lib/jquery/dist/jquery.min.js"></script> *@
+    @* <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script> *@
+    @* <script src="~/js/site.js" asp-append-version="true"></script> *@
+    @* <script src="~/dist/bundle.js" asp-append-version="true"></script> *@
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>

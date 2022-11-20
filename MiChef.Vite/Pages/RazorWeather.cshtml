@@ -1,0 +1,16 @@
+@page
+@model MiChef.Vite.Pages.RazorWeatherModel
+@{
+    ViewData["Title"] = "RazorWeather";
+}
+
+<h1>Weather Forecast by Razor</h1>
+
+@foreach (var weather in Model.WeatherForecasts)
+{
+    <div>
+        <p>@weather.Date.ToString("f")</p>
+        <p>@weather.Summary</p>
+    </div>
+}
+

@@ -1,0 +1,14 @@
+@page
+@using MiChef.Vite.Controllers
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model MiChef.Vite.Pages.ImageAnalysisModel
+@inject ViteManifest ViteManifest
+
+<div id="root"></div>
+
+@section Scripts
+{
+    @{
+        await Html.RenderPartialAsync("Shared/_IncludeViteBundle", ViteManifest.GetManifest("pages/ImageAnalysis/index.jsx"));  
+    }
+}

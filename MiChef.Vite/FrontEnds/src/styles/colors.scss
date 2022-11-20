@@ -1,0 +1,92 @@
+:root {
+  /* bg */
+  --dq-bg-0: #1a1a1a;
+  --dq-bg-1: #282828;
+  --dq-bg-2: #2c2c2c;
+  --dq-bg-3: #3d3d3d;
+  --dq-bg-4: #494949;
+  --dq-bg-5: #9c9c9c;
+  --dq-bg-6: #cecece;
+  /* fg  */
+  --dq-fg-0: #ffffff;
+  --dq-fg-1: #e8e8e8;
+  --dq-fg-2: #3c3c3c;
+  --dq-fg-3: #1a1a1a;
+  /* accent */
+  --dq-accent-0: #3058bf;
+  --dq-accent-1: #505ced;
+  --dq-accent-1: #486edd;
+  --dq-accent-2: #678eec;
+  /* etc */
+  --dq-separaotr: #505050;
+  /* 
+   design system 
+  */
+  /* nav */
+  --dq-bg-nav-group: var(--dq-bg-3);
+  --dq-bg-nav-item: var(--dq-bg-0);
+  --dq-bg-nav-item-active: var(--dq-accent-0);
+  --dq-fg-nav-item: #e8e8e8;
+  --dq-bg-nav-item-separator: #505050;
+  /* filter box */
+  --dq-bg-filter: #2c2c2c;
+  --dq-bd-filter: #0f0f0f;
+  --dq-bd-filter-item: #1a1a1a;
+  --dq-bg-filter-item: #494949;
+  --dq-fg-filter-item: #e8e8e8;
+  --dq-bg-filter-item-dropdown: #3c3c3c;
+  --dq-fg-filter-item-dropdown: #505ced; /* dropdown arrow */
+  --dq-bg-filter-item-row-odd: #bebebe;
+  --dq-bg-filter-item-row-even: #cecece;
+  --dq-bg-filter-item-row-selected: #678eec;
+
+  --dq-bg-filter-tool-button: #3c3c3c;
+  --dq-fg-filter-tool-button: #ffffff;
+  --dq-bd-filter-tool-button: #0f0f0f;
+  --dq-bd-filter-search-button: #0f0f0f;
+  --dq-bg-filter-search-button: #2c2c2c;
+  --dq-fg-filter-search-button: #e8e8e8;
+
+  /* content ui */
+  --dq-bg-view: #191919;
+  --dq-fg-view: #e8e8e8;
+  --dq-bg-view-checkbox: #cecece;
+  --dq-fg-view-checkbox: #323232;
+  --dq-bd-view-checkbox: #0f0f0f;
+  --dq-bg-view-button: #2c2c2c;
+  --dq-fg-view-button: #e8e8e8;
+  --dq-bg-view-combo: #494949;
+  --dq-fg-view-combo: #e8e8e8;
+  --dq-bd-view-grid: #121212;
+  --dq-bd-view-grid-header: #3c3c3c;
+  --dq-bg-view-grid-header: #535353;
+  --dq-fg-view-grid-header: #e8e8e8;
+  --dq-bg-view-grid-filter: #9c9c9c;
+  --dq-fg-view-grid-filter: #3c3c3c;
+  --dq-bd-view-grid-row: #ababab;
+  --dq-bg-view-grid-row: #d4d4d4;
+  --dq-fg-view-grid-row: #646464;
+  --dq-bg-view-grid-free-row: #323232;
+  --dq-bd-view-grid-free-row: transparent;
+  --dq-bg-view-grid-row-active: #649cef;
+  --dq-fg-view-grid-row-active: #ffffff;
+  --dq-bg-view-grid-row-hover: #678feca7;
+  --dq-bg-view-separator: #1d1d1d;
+  /* header */
+  --dq-bg-header: #494949;
+  --dq-bd-header: #0f0f0f;
+
+  /* popup */
+  --dq-bd-popup: #4c56d0;
+  --dq-bg-popup: #2c2c2c;
+  --dq-fg-popup: #e8e8e8;
+  --dq-bg-popup-title: #486edd;
+  --dq-fg-popup-title: #ffffff;
+  --dq-bg-popup-editor: #cecece;
+
+  --dq-bg-textbox: #d4d4d4;
+  --dq-fg-textbox: #2c2c2c;
+  --dq-bg-button: #323232;
+  --dq-fg-button: #ebebeb;
+  font-size: 14px;
+}

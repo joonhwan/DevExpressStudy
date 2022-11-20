@@ -1,0 +1,15 @@
+@page
+@using MiChef.Vite.Controllers
+@model MiChef.Vite.Pages.ReactCounterModel
+@inject ViteManifest ViteManifest
+
+<div id="root"></div>
+@Html.Hidden("reactCountInitialCount", 10);
+
+
+@section Scripts
+{
+    @{
+        await Html.RenderPartialAsync("Shared/_IncludeViteBundle", ViteManifest.GetManifest("pages/ReactCounter/index.jsx"));  
+    }
+}

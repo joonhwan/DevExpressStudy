@@ -1,0 +1,30 @@
+@model MiChef.Vite.Controllers.ManifestRecord  
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+<!-- if  development -->
+<environment include="Development">
+    @* <!--suppress JSUnresolvedFunction --> *@
+    @* <script type="module"> *@
+    @*       import RefreshRuntime from '@Html.Raw("http://localhost:3000/@react-refresh")' *@
+    @*       RefreshRuntime.injectIntoGlobalHook(window) *@
+    @*       window.$RefreshReg$ = () => {} *@
+    @*       window.$RefreshSig$ = () => (type) => type *@
+    @*       window.__vite_plugin_react_preamble_installed__ = true *@
+    @*     </script> *@
+    @* <script type="module" src="@Html.Raw("http://localhost:3000/@vite/client")"></script> *@
+    <script type="module" src="http://localhost:3000/@Model.src"></script>
+</environment>
+<!-- if production -->
+<environment exclude="Development">
+    @foreach (var css in Model.css ?? Array.Empty<string>())
+    {
+        <link rel="stylesheet" href="~/dist/@css"/>
+    }
+    @* <script type="module" src="/assets/{{ manifest['main.js'].file }}"></script> *@
+    @if (!string.IsNullOrWhiteSpace(Model.file))
+    {
+        <script type="module" src="~/dist/@Model.file"></script>
+    }
+</environment>
