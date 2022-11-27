@@ -5,6 +5,7 @@ import { Popup } from "devextreme-react/popup";
 import DateBox from "devextreme-react/date-box";
 import FilterBuilder, { Field } from "devextreme-react/filter-builder";
 import CheckBox from "devextreme-react/check-box";
+import DqIconButton from "./DqIconButton";
 
 function DqFilterBox({ className }) {
   // const filterRef = createRef();
@@ -101,15 +102,11 @@ function DqFilterBox({ className }) {
           >
             <p>더블클릭 또는 편집버튼을 눌러 검색 조건을 추가하세요</p>
           </div>
-          <div
-            className="p-1 border w-[24px] h-[24px] bg-[color:var(--dq-bg-filter-item-dropdown)]  border-black flex items-center justify-center cursor-pointer active:bg-gray-800"
+          <DqIconButton
+            icon={"pencil-fill"}
             onClick={toggleFilterVisible}
-          >
-            <i className="bi bi-pencil-fill text-[12px]"></i>
-          </div>
-          <div className="p-1 border w-[24px] h-[24px] border-black flex items-center justify-center  cursor-pointer">
-            <i className="bi bi-trash-fill text-[12px]"></i>
-          </div>
+          ></DqIconButton>
+          <DqIconButton icon={"trash-fill"}></DqIconButton>
         </div>
         <div className="flex items-center justify-center cursor-pointer border border-black w-[76px] h-[28px] bg-[color:var(--dq-bg-filter)]">
           검색
@@ -125,6 +122,7 @@ function DqFilterBox({ className }) {
         resizeEnabled={true}
         dragEnabled={true}
         position="center"
+        animation={null}
         titleComponent={() => {
           return (
             <p className="text-base align-text-bottom pt-1">

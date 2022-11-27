@@ -1,20 +1,30 @@
 import React from "react";
 import Split from "react-split";
 import DqFilterBox from "../../components/DqFilterBox";
-import WorkflowVersions from "../../components/WorkflowVersions";
+import ParameterTemplate from "./ParameterTemplate";
+import Workflows from "./Workflows";
+import WorkflowVersionDetail from "./WorkflowVersionDetail";
+import WorkflowVersions from "./WorkflowVersions";
 
 function App() {
   return (
-    <Split className="flex h-screen" gutterSize={4}>
+    <Split className="flex h-screen" sies={[50, 50]} gutterSize={4}>
       <div className="flex flex-col gap-1 px-2 pt-2">
         <DqFilterBox></DqFilterBox>
-        <WorkflowVersions className="flex-auto"></WorkflowVersions>
+        <Workflows className="grow"></Workflows>
       </div>
-      <div className="px-1">
-        <div>버전관리</div>
-        <div>워크플로우 버전목록</div>
-        <div>파라미터 템플릿</div>
-      </div>
+      <Split
+        className="flex flex-col justify-between"
+        sizes={[60, 40]}
+        direction="vertical"
+        gutterSize={4}
+      >
+        <WorkflowVersions className="p-1"></WorkflowVersions>
+        <Split className="flex min-h-fit" sizes={[50, 50]} gutterSize={4}>
+          <WorkflowVersionDetail className="p-1"></WorkflowVersionDetail>
+          <ParameterTemplate className="p-1 grow"></ParameterTemplate>
+        </Split>
+      </Split>
     </Split>
   );
 }

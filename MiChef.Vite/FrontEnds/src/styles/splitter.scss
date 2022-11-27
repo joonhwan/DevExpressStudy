@@ -1,6 +1,10 @@
 .gutter {
-  background-color: var(--dq-bg-nav-item-separator);
+  background-color: black;
 }
 .gutter-horizontal {
   cursor: ew-resize;
+}
+
+.gutter-vertical {
+  cursor: ns-resize;
 }
