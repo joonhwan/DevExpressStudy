@@ -24,10 +24,14 @@ export default function DqDataGrid({
   if (filterRowVisible === undefined) {
     filterRowVisible = true;
   }
-
+  const { className, ...dxGridProps } = props;
+  console.log("dxGridProps = ", dxGridProps);
   return (
-    <div className={`flex flex-col border border-black ${props.className}`}>
+    <div
+      className={`dq-grid flex flex-col border border-black ${props.className}`}
+    >
       <DataGrid
+        className="grow"
         dataSource={dataSource}
         keyExpr="id"
         hoverStateEnabled={true}
@@ -40,12 +44,11 @@ export default function DqDataGrid({
         //   console.log(e);
         //   return <div>Row!!! </div>;
         // }}
-        scrolling={"auto"}
         onFocusedRowChanged={(e) => {
           // e.component.selectRows([e.row.data.id]);
           console.log("row changed : ", e.rowIndex);
         }}
-        {...props}
+        {...dxGridProps}
       >
         <Selection mode="single"></Selection>
         <FilterRow visible={true} />

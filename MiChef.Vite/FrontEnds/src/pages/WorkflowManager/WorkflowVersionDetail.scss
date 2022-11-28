@@ -1,0 +1,18 @@
+.dx-field-item-label-content {
+  width: 120px !important;
+}
+
+.dx-box-item-content {
+  font-size: 14px;
+}
+
+.dx-texteditor-input {
+  background-color: var(--dq-bg-textbox);
+  color: var(--dq-fg-textbox);
+  border-radius: 0px;
+}
+
+input[readonly].dx-texteditor-input {
+  background-color: var(--dq-bg-readonly-textbox);
+  color: var(--dq-fg-reaonly-textbox);
+}

@@ -1,0 +1,26 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.demo {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.demo-grid {
+  flex: 2;
+  min-height: 0px;
+}
+
+.box-orange {
+  background-color: orange;
+}
+
+.big-font {
+  font-size: 5rem;
+}
