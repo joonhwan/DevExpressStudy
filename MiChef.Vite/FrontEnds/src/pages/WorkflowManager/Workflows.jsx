@@ -3,6 +3,7 @@ import DqDataGrid, { Column } from "../../components/DqDataGrid";
 import Select2 from "../../components/Select2";
 import DqCheckBox from "../../components/DqCheckBox";
 import DqToolTextButton from "../../components/DqToolTextButton";
+import AddWorkflowPopup from "./AddWorkflowPopup";
 
 const workflows = [];
 for (var i = 0; i < 100; i++) {
@@ -20,7 +21,14 @@ for (var i = 0; i < 100; i++) {
 function Workflows({ className }) {
   const [titleVisible, setTitleVisible] = useState(false);
   const [idVisible, setIdVisible] = useState(true);
+  const [popupVisible, setPopupVisible] = useState(false);
 
+  const addWorkflow = () => {
+    console.log("Workflow 추가, ", popupVisible);
+    setPopupVisible(true);
+  };
+
+  const handleAdd = () => {};
   return (
     <div
       className={className + " flex flex-col grow"}
@@ -43,7 +51,10 @@ function Workflows({ className }) {
           onChange={() => setTitleVisible(!titleVisible)}
         ></DqCheckBox>
         <div className="grow"></div>
-        <DqToolTextButton title={"추가"}></DqToolTextButton>
+        <DqToolTextButton
+          title={"추가"}
+          onClick={addWorkflow}
+        ></DqToolTextButton>
         <DqToolTextButton title={"수정"}></DqToolTextButton>
         <DqToolTextButton title={"삭제"}></DqToolTextButton>
       </div>
@@ -86,6 +97,10 @@ function Workflows({ className }) {
           caption={"수정일"}
         ></Column>
       </DqDataGrid>
+      <AddWorkflowPopup
+        popupVisible={popupVisible}
+        setPopupVisible={setPopupVisible}
+      ></AddWorkflowPopup>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-function CheckBox({ title, checked, onChange, className }) {
+function DqCheckBox({ title, checked, onChange, className }) {
   return (
     <label className="flex items-center gap-1">
       <input
@@ -12,4 +12,4 @@ function CheckBox({ title, checked, onChange, className }) {
     </label>
   );
 }
-export default CheckBox;
+export default DqCheckBox;

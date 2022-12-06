@@ -103,3 +103,11 @@ body {
   background-color: var(--dq-bg-view);
   color: var(--dq-fg-view);
 }
+
+.dx-popup-title.dx-toolbar .dx-toolbar-label {
+  font-size: 14px;
+}
+
+.dx-toolbar.dx-widget.dx-visibility-change-handler.dx-collection.dx-popup-bottom {
+  background-color: #494949;
+}

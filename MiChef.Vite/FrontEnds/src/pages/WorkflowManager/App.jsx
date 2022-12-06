@@ -14,7 +14,7 @@ function App() {
         <Workflows className="grow"></Workflows>
       </div>
       <Split
-        className="flex flex-col justify-between"
+        className="flex flex-col"
         sizes={[50, 50]}
         direction="vertical"
         gutterSize={4}

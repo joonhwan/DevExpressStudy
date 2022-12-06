@@ -25,7 +25,7 @@ export default function DqDataGrid({
     filterRowVisible = true;
   }
   const { className, ...dxGridProps } = props;
-  console.log("dxGridProps = ", dxGridProps);
+  // console.log("dxGridProps = ", dxGridProps);
   return (
     <div
       className={`dq-grid flex flex-col border border-black ${props.className}`}

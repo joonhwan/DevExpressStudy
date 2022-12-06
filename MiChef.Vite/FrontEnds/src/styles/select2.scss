@@ -2,6 +2,10 @@
   background-color: var(--dq-bg-filter-item);
 }
 
+.select2-container--open {
+  z-index: 1502;
+}
+
 .select2-container--default .select2-selection--single {
   background-color: #fff;
   // border: 1px solid #aaa;
@@ -46,4 +50,9 @@
 .select2-container--default
   .select2-results__option--highlighted.select2-results__option--selectable {
   background-color: var(--dq-bg-filter-item-row-selected);
+}
+
+.select2-container--default
+  .select2-selection--single
+  .select2-selection__rendered {
 }

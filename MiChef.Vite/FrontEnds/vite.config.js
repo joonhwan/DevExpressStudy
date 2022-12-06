@@ -37,6 +37,7 @@ export default defineConfig({
         "src/pages/ReactNote/index.jsx",
         "src/pages/ImageAnalysis/index.jsx",
         "src/pages/WorkflowManager/index.jsx",
+        "src/pages/DatasetManager/index.jsx",
         // "src/dx.bundle.js",
         "src/site.js",
         "src/index.js",

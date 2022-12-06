@@ -1,0 +1,35 @@
+.dq-add-workflow-form {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  align-items: center;
+  grid-gap: 5px 30px;
+
+  > label {
+    display: contents;
+  }
+}
+
+.select2-container--default
+  .select2-selection--single
+  .select2-selection__rendered {
+  line-height: 24px;
+}
+
+.select2-container .select2-selection--single {
+  height: 24px;
+}
+
+.select2-container--default
+  .select2-selection--single
+  .select2-selection__arrow {
+  height: 24px;
+  line-height: 24px;
+  font-size: 1rem;
+  right: 0;
+  top: 0;
+}
+
+.select2-results__options {
+  line-height: 0.8rem;
+  font-size: 12px;
+}
